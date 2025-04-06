@@ -1,0 +1,14 @@
+<div class="card mt-3 mb-3">
+  <div class="card-header">
+    Статус API
+  </div>
+  <div class="card-body">
+    <div *ngIf="!error">
+      <p>Статус: {{ status }}</p>
+      <p>Сообщение: {{ message }}</p>
+    </div>
+    <div *ngIf="error" class="alert alert-danger">
+      {{ error }}
+    </div>
+  </div>
+</div>
