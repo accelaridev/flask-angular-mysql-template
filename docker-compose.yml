@@ -3,11 +3,11 @@ version: '3'
 services:
   mysql:
     image: mysql:8.0
-    container_name: my_new_project2_mysql
+    container_name: __PROJECT_NAME___mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: my_new_project2_db
+      MYSQL_DATABASE: __PROJECT_NAME___db
       MYSQL_USER: user
       MYSQL_PASSWORD: password
     ports:
@@ -19,7 +19,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: my_new_project2_phpmyadmin
+    container_name: __PROJECT_NAME___phpmyadmin
     restart: always
     environment:
       PMA_HOST: mysql
@@ -49,12 +49,12 @@ services:
 
   frontend:
     build:
-      context: ./frontend/my_new_project2
+      context: ./frontend/__PROJECT_NAME__
       dockerfile: Dockerfile
-    container_name: my_new_project2_frontend
+    container_name: __PROJECT_NAME___frontend
     restart: always
     volumes:
-      - ./frontend/my_new_project2:/app
+      - ./frontend/__PROJECT_NAME__:/app
     ports:
       - "4200:4200"
     depends_on:
