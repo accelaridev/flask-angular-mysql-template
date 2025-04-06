@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "my_new_project2": {
+    "__PROJECT_NAME__": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -39,7 +39,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/my_new_project2",
+            "outputPath": "dist/__PROJECT_NAME__",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -86,10 +86,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "my_new_project2:build:production"
+              "buildTarget": "__PROJECT_NAME__:build:production"
             },
             "development": {
-              "buildTarget": "my_new_project2:build:development"
+              "buildTarget": "__PROJECT_NAME__:build:development"
             }
           },
           "defaultConfiguration": "development"
